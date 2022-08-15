@@ -43,6 +43,7 @@
                         android:layout_width="203dp"
                         android:layout_height="116dp"
                         android:layout_weight="0.3"
+                        android:contentDescription="@string/image"
                         android:padding="5dp"
                         android:scaleType="fitXY"
                         android:src="@drawable/ic_place_holder"

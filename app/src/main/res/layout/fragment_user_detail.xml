@@ -143,7 +143,7 @@
                         app:layout_constraintVertical_bias="0.0"
                         tools:text="2348103119454" />
 
-                    <fragment
+                    <androidx.fragment.app.FragmentContainerView
                         android:id="@+id/google_map"
                         android:name="com.google.android.gms.maps.SupportMapFragment"
                         android:layout_width="match_parent"

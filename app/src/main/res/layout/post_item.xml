@@ -27,6 +27,7 @@
                 android:layout_height="130dp"
                 android:layout_weight="0.3"
                 android:padding="5dp"
+                android:contentDescription="@string/image"
                 android:scaleType="fitXY"
                 android:src="@drawable/ic_place_holder"
                 app:layout_constraintBottom_toTopOf="@+id/post_title"
