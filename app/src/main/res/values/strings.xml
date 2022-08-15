@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">BenshiPosts</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="post">Benshi Assessment</string>
+    <string name="comments">Comments</string>
+    <string name="address">Address</string>
+    <string name="street_header">Street :</string>
+    <string name="suite_header">Suite :</string>
+    <string name="city_header">City :</string>
+    <string name="zip_code_header">Zip Code :</string>
+    <string name="email_header">Email :</string>
+    <string name="username_header">Username :</string>
+    <string name="company_header">Company</string>
+    <string name="name_header">Name :</string>
+    <string name="website">Website</string>
+    <string name="phone">Phone</string>
 </resources>

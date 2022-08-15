@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/postFragment">
+
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.onirutla.kumparantest.ui.posts.PostFragment"
+        android:label="fragment_posts"
+        tools:layout="@layout/fragment_posts" >
+        <action
+            android:id="@+id/action_postFragment_to_postDetailFragment"
+            app:destination="@id/postDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/postDetailFragment"
+        android:name="com.onirutla.kumparantest.ui.posts.detail.PostDetailFragment"
+        android:label="fragment_post_detail"
+        tools:layout="@layout/fragment_post_detail" >
+        <argument
+            android:name="postDto"
+            app:argType="com.onirutla.kumparantest.data.dto.post.PostDto" />
+        <action
+            android:id="@+id/action_postDetailFragment_to_userDetailFragment"
+            app:destination="@id/userDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetailFragment"
+        android:name="com.onirutla.kumparantest.ui.user.UserDetailFragment"
+        android:label="fragment_user_detail"
+        tools:layout="@layout/fragment_user_detail">
+        <argument
+            android:name="userId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_userDetailFragment_to_photoDetailFragment"
+            app:destination="@id/photoDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photoDetailFragment"
+        android:name="com.onirutla.kumparantest.ui.photo.PhotoDetailFragment"
+        android:label="PhotoDetailFragment"
+        tools:layout="@layout/fragment_photo_detail">
+        <argument
+            android:name="photo"
+            app:argType="com.onirutla.kumparantest.data.dto.photo.PhotoDto" />
+    </fragment>
+
+</navigation>

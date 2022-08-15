@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="post"
+            type="com.odogwudev.benshiposts.data.local.dto.post.PostDto" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            style="@style/Widget.MaterialComponents.AppBarLayout.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorSurface"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentScrim="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+                app:titleEnabled="false"
+                app:toolbarId="@id/toolbar">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/post_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:layout_collapseParallaxMultiplier="0.7">
+
+                    <ImageView
+                        android:id="@+id/ivPostImg"
+                        android:layout_width="203dp"
+                        android:layout_height="116dp"
+                        android:layout_weight="0.3"
+                        android:padding="5dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_place_holder"
+                        app:layout_constraintBottom_toTopOf="@+id/post_title"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.875"
+                        app:layout_constraintStart_toEndOf="@+id/user_name"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0"
+                        tools:srcCompat="@tools:sample/avatars" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@{post.username}"
+                        android:textAppearance="?attr/textAppearanceListItem"
+                        android:textColor="?attr/colorOnSurface"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="odogwudev" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/user_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@{post.userCompanyName}"
+                        app:layout_constraintEnd_toEndOf="@+id/user_name"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/user_name"
+                        app:layout_constraintTop_toBottomOf="@+id/user_name"
+                        tools:text="benshi.ai" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/post_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:maxLines="2"
+                        android:text="@{post.title}"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textColor="?attr/colorOnSurface"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivPostImg"
+                        tools:text="Top Reasons to apply to Benshi" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/post_body"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="@{post.body}"
+                        android:textAppearance="?attr/textAppearanceBody1"
+                        android:textColor="?attr/colorOnSurface"
+                        app:layout_constraintBottom_toTopOf="@+id/line"
+                        app:layout_constraintEnd_toEndOf="@+id/post_title"
+                        app:layout_constraintStart_toStartOf="@+id/post_title"
+                        app:layout_constraintTop_toBottomOf="@+id/post_title"
+                        tools:text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore rem fugit, soluta facere aut ducimus, aliquid ratione ut ipsam asperiores molestiae cumque sit enim, consectetur eligendi id doloremque expedita? Quam." />
+
+                    <View
+                        android:id="@+id/line"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="8dp"
+                        android:background="?attr/colorOnSurface"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/post_body" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:contentInsetStartWithNavigation="0dp"
+                    app:layout_collapseMode="pin"
+                    app:navigationIconTint="?attr/colorOnPrimary"
+                    app:navigationIcon="@drawable/ic_arrow_back_24"
+                    app:title="@string/comments" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/comment_shimmer_item" />
+
+                <include layout="@layout/comment_shimmer_item" />
+
+                <include layout="@layout/comment_shimmer_item" />
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/comment_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            tools:itemCount="10"
+            android:visibility="gone"
+            tools:layout_editor_absoluteX="0dp"
+            tools:listitem="@layout/comment_item" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

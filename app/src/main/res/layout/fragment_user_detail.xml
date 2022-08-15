@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.odogwudev.benshiposts.data.local.dto.user.UserDto" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            style="@style/Widget.MaterialComponents.AppBarLayout.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorSurface"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:contentScrim="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+                app:titleEnabled="false"
+                app:toolbarId="@id/toolbar">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/user_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:layout_collapseParallaxMultiplier="0.7">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/user_name_header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/name_header"
+                        android:textAppearance="?attr/textAppearanceSubtitle2"
+                        android:textColor="?attr/colorOnSurface"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@{user.name}"
+                        android:textAppearance="?attr/textAppearanceListItemSmall"
+                        android:textColor="?attr/colorOnSurface"
+                        app:layout_constraintBottom_toBottomOf="@+id/user_name_header"
+                        app:layout_constraintStart_toEndOf="@+id/user_name_header"
+                        app:layout_constraintTop_toTopOf="@+id/user_name_header"
+                        tools:text="Michael Enoma" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/user_email_header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/email_header"
+                        android:textAppearance="?attr/textAppearanceSubtitle2"
+                        android:textColor="?attr/colorOnSurface"
+                        app:layout_constraintEnd_toEndOf="@+id/user_name_header"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/user_name_header"
+                        app:layout_constraintTop_toBottomOf="@+id/user_name_header" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/user_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@{user.email}"
+                        android:textAppearance="?attr/textAppearanceListItemSmall"
+                        android:textColor="?attr/colorOnSurface"
+                        app:layout_constraintBottom_toBottomOf="@+id/user_email_header"
+                        app:layout_constraintStart_toEndOf="@+id/user_email_header"
+                        app:layout_constraintTop_toTopOf="@+id/user_email_header"
+                        tools:text="enomamichael@gmail.com" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/user_username_header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/website"
+                        android:textAppearance="?attr/textAppearanceSubtitle2"
+                        android:textColor="?attr/colorOnSurface"
+                        app:layout_constraintEnd_toEndOf="@+id/user_email_header"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/user_email_header"
+                        app:layout_constraintTop_toBottomOf="@+id/user_email_header" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/user_website"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@{user.username}"
+                        android:textAppearance="?attr/textAppearanceListItemSmall"
+                        android:textColor="?attr/colorOnSurface"
+                        app:layout_constraintBottom_toBottomOf="@+id/user_username_header"
+                        app:layout_constraintStart_toEndOf="@+id/user_username_header"
+                        app:layout_constraintTop_toTopOf="@+id/user_username_header"
+                        tools:text="odogwudev" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/user_phone_header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/phone"
+                        android:textAppearance="?attr/textAppearanceSubtitle2"
+                        android:textColor="?attr/colorOnSurface"
+                        app:layout_constraintEnd_toEndOf="@+id/user_username_header"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/user_username_header"
+                        app:layout_constraintTop_toBottomOf="@+id/user_username_header" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/user_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="@{user.phone}"
+                        android:textAppearance="?attr/textAppearanceListItemSmall"
+                        android:textColor="?attr/colorOnSurface"
+                        app:layout_constraintBottom_toBottomOf="@+id/user_phone_header"
+                        app:layout_constraintStart_toEndOf="@+id/user_phone_header"
+                        app:layout_constraintTop_toTopOf="@+id/user_phone_header"
+                        app:layout_constraintVertical_bias="0.0"
+                        tools:text="2348103119454" />
+
+                    <fragment
+                        android:id="@+id/google_map"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/user_phone"
+                        app:layout_constraintVertical_bias="0.0" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:contentInsetStartWithNavigation="0dp"
+                    app:layout_collapseMode="pin"
+                    app:navigationIcon="@drawable/ic_arrow_back_24"
+                    app:navigationIconTint="?attr/colorOnPrimary">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@{user.name}"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="?attr/colorOnPrimary"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Michael Enoma" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.appbar.MaterialToolbar>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
