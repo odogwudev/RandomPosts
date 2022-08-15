@@ -1,4 +1,4 @@
-package com.odogwudev.benshiposts.utils
+package com.odogwudev.benshiposts.shared.utils
 
 sealed class UIState<T> {
     data class Success<T>(val data: T, val message: String? = null) : UIState<T>()

@@ -1,10 +1,10 @@
-package com.odogwudev.benshiposts.utils
+package com.odogwudev.benshiposts.shared
 
 import androidx.recyclerview.widget.DiffUtil
 import com.odogwudev.benshiposts.data.local.dto.comment.CommentDto
 import com.odogwudev.benshiposts.data.local.dto.post.PostDto
 
-object Constant {
+object Constants {
     const val BASE_URL = "https://jsonplaceholder.typicode.com/"
 
     val postDiff = object : DiffUtil.ItemCallback<PostDto>() {

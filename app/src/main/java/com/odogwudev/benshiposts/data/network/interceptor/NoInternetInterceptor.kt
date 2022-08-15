@@ -1,4 +1,4 @@
-package com.odogwudev.benshiposts.data.remote.network.interceptor
+package com.odogwudev.benshiposts.data.network.interceptor
 
 import okhttp3.Interceptor
 import okhttp3.Response

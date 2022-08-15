@@ -1,4 +1,4 @@
-package com.odogwudev.benshiposts.utils
+package com.odogwudev.benshiposts.shared.utils
 
 import javax.inject.Qualifier
 

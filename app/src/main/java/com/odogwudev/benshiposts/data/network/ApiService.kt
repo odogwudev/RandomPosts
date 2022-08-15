@@ -1,8 +1,8 @@
-package com.odogwudev.benshiposts.data.remote.network
+package com.odogwudev.benshiposts.data.network
 
-import com.odogwudev.benshiposts.data.remote.model.CommentResponse
-import com.odogwudev.benshiposts.data.remote.model.PostResponse
-import com.odogwudev.benshiposts.data.remote.model.user.UserResponse
+import com.odogwudev.benshiposts.data.model.CommentResponse
+import com.odogwudev.benshiposts.data.model.PostResponse
+import com.odogwudev.benshiposts.data.model.user.UserResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

@@ -1,4 +1,4 @@
-package com.odogwudev.benshiposts.data.remote.model
+package com.odogwudev.benshiposts.data.model
 
 import com.odogwudev.benshiposts.data.local.dto.comment.CommentDto
 import com.squareup.moshi.Json

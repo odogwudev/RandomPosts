@@ -1,4 +1,4 @@
-package com.odogwudev.benshiposts.data.remote.model.user
+package com.odogwudev.benshiposts.data.model.user
 
 import com.odogwudev.benshiposts.data.local.dto.user.AddressDto
 import com.odogwudev.benshiposts.data.local.dto.user.CompanyDto

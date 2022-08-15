@@ -1,4 +1,4 @@
-package com.odogwudev.benshiposts.utils
+package com.odogwudev.benshiposts.shared.utils
 
 sealed class NetworkState<T> {
     data class Success<T>(val body: T, val message: String? = null) : NetworkState<T>()
