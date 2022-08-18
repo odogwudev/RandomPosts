@@ -16,4 +16,6 @@
     <string name="phone">Phone</string>
     <string name="image">Image for the news</string>
     <string name="map_key">AIzaSyDr71zfkJxgUwLDWmc6R-4dFvo4EyxZgZQ</string>
+    <string name="text_label_1">Home</string>
+    <string name="text_label_2">Settings</string>
 </resources>
