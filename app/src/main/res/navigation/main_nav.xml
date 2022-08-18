@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_post_detail" >
         <argument
             android:name="postDto"
-            app:argType="com.odogwudev.benshiposts.data.dto.post.PostDto" />
+            app:argType="com.odogwudev.benshiposts.data.local.dto.post.PostDto" />
         <action
             android:id="@+id/action_postDetailFragment_to_userDetailFragment"
             app:destination="@id/userDetailFragment" />

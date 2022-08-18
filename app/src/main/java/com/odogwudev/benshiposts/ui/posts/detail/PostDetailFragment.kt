@@ -10,7 +10,10 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
+import com.odogwudev.benshiposts.R
 import com.odogwudev.benshiposts.databinding.FragmentPostDetailBinding
+import com.odogwudev.benshiposts.shared.HashUtils
 import com.odogwudev.benshiposts.shared.utils.UIState
 import com.odogwudev.benshiposts.ui.posts.comment.CommentAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -59,6 +62,18 @@ class PostDetailFragment : Fragment() {
                     )
                 )
             }
+            post?.apply {
+                val imageLink = title
+                val hashedLinkForSeed = imageLink.let { HashUtils.sha256(it) }
+                val getImageUrl = "https://picsum.photos/seed/$hashedLinkForSeed/200/200"
+
+                Glide.with(ivPostImg)
+                    .load(getImageUrl)
+                    .placeholder(R.drawable.ic_place_holder)
+                    .into(ivPostImg)
+
+            }
+
         }
         viewModel.getCommentByPostId(postDto.id)
 
