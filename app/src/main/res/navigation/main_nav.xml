@@ -36,6 +36,6 @@
             android:name="userId"
             app:argType="integer" />
     </fragment>
-
+    <include app:graph="@navigation/nav_settigns" />
 
 </navigation>

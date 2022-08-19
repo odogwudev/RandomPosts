@@ -9,8 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.odogwudev.benshiposts.databinding.FragmentPostsBinding
 import com.odogwudev.benshiposts.shared.utils.UIState
+import com.odogwudev.benshiposts.ui.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -79,4 +81,6 @@ class PostFragment : Fragment() {
         binding.postsList.adapter = null
         _binding = null
     }
+
+
 }
