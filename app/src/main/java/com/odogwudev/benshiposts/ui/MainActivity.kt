@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuItemCompat
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
@@ -33,28 +34,33 @@ class MainActivity : AppCompatActivity() {
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-
-        navController = navHostFragment.findNavController()
-        bottomNav = findViewById(R.id.bottomNavigationView) as BottomNavigationView
-        bottomNav.setOnNavigationItemReselectedListener {
+        val navController = navHostFragment.navController
+        binding.bottomNavigationView.setupWithNavController(navController)
+        binding.bottomNavigationView.setOnItemSelectedListener {
+            val clearNavOptions =
+                NavOptions.Builder().setLaunchSingleTop(true).setPopUpTo(R.id.main_nav, true)
+                    .build()
             when (it.itemId) {
                 R.id.page_1 -> {
-                    loadFragment(PostFragment())
-                    return@setOnNavigationItemReselectedListener
+                    navController.navigate(R.id.postFragment, null, clearNavOptions)
+                    true
                 }
                 R.id.page_2 -> {
-                    loadFragment(SettingsFragment())
-                    return@setOnNavigationItemReselectedListener
+                    navController.navigate(R.id.settingsFragment, null, clearNavOptions)
+                    true
                 }
+                else -> false
             }
         }
-    }
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            binding.bottomNavigationView.isVisible = when (destination.id) {
+                R.id.postFragment -> true
+                R.id.settingsFragment -> true
 
-    private fun loadFragment(fragment: Fragment) {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.nav_host_fragment, fragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
-    }
+                else -> false
+            }
+        }
 
+
+    }
 }

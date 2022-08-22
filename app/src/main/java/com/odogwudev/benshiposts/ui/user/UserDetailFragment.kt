@@ -57,9 +57,6 @@ class UserDetailFragment : Fragment(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
 
 
-        user?.address?.geo?.let {
-            location = LatLng(it.lat.toDouble(), it.lng.toDouble())
-        }
 
 
         binding.apply {
@@ -75,6 +72,9 @@ class UserDetailFragment : Fragment(), OnMapReadyCallback {
                 }
                 userWebsite.setOnClickListener {
                     user?.website?.let { it1 -> openWebsite(it1) }
+                }
+                user?.address?.geo?.let {
+                    location = LatLng(it.lat.toDouble(), it.lng.toDouble())
                 }
             }
         }
@@ -146,7 +146,7 @@ class UserDetailFragment : Fragment(), OnMapReadyCallback {
         return
     }
 
-    fun openWebsite(address: String?) {
+    private fun openWebsite(address: String?) {
         var url = user?.website
         if (!address?.startsWith("https://")!! && !address.startsWith("http://")) {
             url = "http://$address";

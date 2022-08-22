@@ -36,6 +36,10 @@
             android:name="userId"
             app:argType="integer" />
     </fragment>
-    <include app:graph="@navigation/nav_settigns" />
 
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.odogwudev.benshiposts.ui.settings.SettingsFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_settings" />
 </navigation>
